@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+ - pasdroid - An open source implementation of Password Maker for the
+ - Android platform, written in Java
+ - 
+ - Copyright (C) 2010 Devin Quirozoliver
+ - http://arik181.github.com/pasdroid
+ - http://github.com/arik181/pasdroid
+ - http://passwordmaker.org/
+ -
+ - This library is free software; you can redistribute it and/or modify it
+ - under the terms of the GNU Lesser General Public License as published by
+ - the Free Software Foundation; either version 2.1 of the License, or (at
+ - your option) any later version.
+ -  
+ - This library is distributed in the hope that it will be useful, but WITHOUT
+ - ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ - FITNESSFOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License
+ - for more details.
+ - 
+ - You should have received a copy of the GNU Lesser General Public License
+ - along with this library; if not, write to the Free Software Foundation,
+ - Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+ - 
+ - Written by Devin Quirozoliver <arik181@hotmail.com>
+ - 
+ - Original Command Line Client Written by Miquel Burns 
+ - <miquelfire@gmail.com> and Eric H. Jung
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    
+    	<TextView
+				android:id="@+id/password_label"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/password_label"
+				/>
+	
+	    <EditText android:id="@+id/password" 
+	              android:layout_width="fill_parent" 
+	              android:layout_height="wrap_content" 
+	              android:layout_below="@id/password_label"
+	              android:password="true"
+	              android:background="@android:drawable/editbox_background" 
+	              />
+	              
+		<TextView
+				android:id="@+id/confirmation_label"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/password"
+				android:text="@string/confirmation_label"
+				/>
+	
+	    <EditText android:id="@+id/confirmation" 
+	              android:layout_width="fill_parent" 
+	              android:layout_height="wrap_content" 
+	              android:background="@android:drawable/editbox_background"
+	              android:layout_below="@id/confirmation_label"
+	              android:password="true"
+	              />
+
+		
+	    <TextView
+				android:id="@+id/save_password_label"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/save_password_label"
+				android:layout_below="@id/confirmation"
+				/>
+
+		<Spinner
+				android:id="@+id/save_password"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/save_password_label"
+				android:text="@string/save_password"
+		/>
+		
+		<TextView
+				android:id="@+id/use_profile_label"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/save_password"
+				android:text="@string/use_profile_label"
+				/>
+				
+		<Spinner
+				android:id="@+id/use_profile"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/use_profile_label"
+				android:text="@string/use_profile"
+		/>
+		
+			
+		<TextView
+				android:id="@+id/used_text_label"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/use_profile"
+				android:text="@string/used_text_label"
+				/>
+				
+	    <EditText android:id="@+id/used_text" 
+	              android:layout_width="fill_parent" 
+	              android:layout_height="wrap_content" 
+	              android:background="@android:drawable/editbox_background"
+	              android:layout_below="@id/used_text_label"
+	              />
+		
+		<TextView
+				android:id="@+id/generated_password_label"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/used_text"
+				android:text="@string/generated_password_label"
+				/>	
+						
+		<TextView
+				android:id="@+id/generated_password"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/generated_password_label"
+				android:text="@string/generated_password"
+				/>
+
+		<Button
+				android:id="@+id/copy"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/generated_password"
+				android:layout_alignParentRight="true"
+				android:text="@string/copy_button"
+				/>
+		
+	</RelativeLayout>
+</LinearLayout>
