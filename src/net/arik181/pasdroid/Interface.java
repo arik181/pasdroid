@@ -14,7 +14,7 @@
  *  
  * This library is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
- * FITNESSFOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License
+ * FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License
  * for more details.
  * 
  * You should have received a copy of the GNU Lesser General Public License
@@ -31,6 +31,11 @@ package net.arik181.pasdroid;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import net.arik181.pasdroid.Fakehash;
 
 public class Interface extends Activity {
     /** Called when the activity is first created. */
@@ -38,5 +43,27 @@ public class Interface extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+    }
+    
+    public void generateHash()
+    {
+    	Button button = (Button)findViewById(R.id.generate);
+        button.setOnClickListener(new View.OnClickListener() {
+			
+			public void onClick(View v) {
+				// when the button is clicked:
+		    	// get the contents of the first passfield
+		    	EditText password = (EditText)findViewById(R.id.password);
+		    	String password_string = password.getText().toString();
+		    	// get the contents of the second passfield
+		    	EditText confirmation = (EditText)findViewById(R.id.confirmation);
+		    	String confirmation_string = confirmation.getText().toString();
+		    	// Combine the two text elements
+		    	String combined= password_string + confirmation_string;
+		    	// change the text value of R.id.solution
+		    	TextView generated_password =  (TextView)findViewById(R.id.generated_password);
+		    	generated_password.setText(combined);
+			}
+		});
     }
 }
