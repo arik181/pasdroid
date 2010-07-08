@@ -52,32 +52,18 @@ public class Interface extends Activity {
     	Button generateButton = (Button)findViewById(R.id.generate);
 
     	generateButton.setOnClickListener(new View.OnClickListener() {
+    		@Override
     		public void onClick(View v) {
-    			TextView password = (TextView)findViewById(R.id.generated_password);
-    			password.setText("blah");
+    			TextView generatedPasswordView = (TextView)findViewById(R.id.generated_password);
+    			EditText masterPasswordView = (EditText)findViewById(R.id.password);
+    			EditText usedTextView = (EditText)findViewById(R.id.used_text);
+    			
+    	    	Fakehash hashGenerator = new Fakehash();
+    	    	String masterPassword = masterPasswordView.getText().toString();
+    	    	String usedText = usedTextView.getText().toString();
+    	    	String password = hashGenerator.getHash(masterPassword, usedText);
+    			generatedPasswordView.setText(password);
     		}
     	});
-    }
-    
-    public void generateHash()
-    {
-    	Button button = (Button)findViewById(R.id.generate);
-        button.setOnClickListener(new View.OnClickListener() {
-			
-			public void onClick(View v) {
-				// when the button is clicked:
-		    	// get the contents of the first passfield
-		    	EditText password = (EditText)findViewById(R.id.password);
-		    	String password_string = password.getText().toString();
-		    	// get the contents of the second passfield
-		    	EditText confirmation = (EditText)findViewById(R.id.confirmation);
-		    	String confirmation_string = confirmation.getText().toString();
-		    	// Combine the two text elements
-		    	String combined= password_string + confirmation_string;
-		    	// change the text value of R.id.solution
-		    	TextView generated_password =  (TextView)findViewById(R.id.generated_password);
-		    	generated_password.setText(combined);
-			}
-		});
     }
 }

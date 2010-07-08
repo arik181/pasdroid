@@ -35,10 +35,15 @@ package net.arik181.pasdroid;
  */
 public class Fakehash {
 
-	public String getHash()
+	public Fakehash()
 	{
-		String blargh = "FakeHash";
-		return blargh;
+		
+	}
+	
+	public String getHash(String masterPassword, String other)
+	{
+		String hash = masterPassword + other;
+		return hash;
 	}
 	/**
 	 * @param args
