@@ -37,12 +37,26 @@ import android.widget.EditText;
 import android.widget.TextView;
 import net.arik181.pasdroid.Fakehash;
 
+
 public class Interface extends Activity {
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        setGenerateButton();
+    }
+
+    public void setGenerateButton()
+    {
+    	Button generateButton = (Button)findViewById(R.id.generate);
+
+    	generateButton.setOnClickListener(new View.OnClickListener() {
+    		public void onClick(View v) {
+    			TextView password = (TextView)findViewById(R.id.generated_password);
+    			password.setText("blah");
+    		}
+    	});
     }
     
     public void generateHash()
