@@ -8,3 +8,4 @@ res
 src
 bin
 gen
+*.log
