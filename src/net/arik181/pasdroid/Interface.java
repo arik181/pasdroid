@@ -35,7 +35,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import net.arik181.pasdroid.Fakehash;
+import net.arik181.pasdroid.HashBuilder;
 
 
 public class Interface extends Activity {
@@ -58,7 +58,7 @@ public class Interface extends Activity {
     			EditText masterPasswordView = (EditText)findViewById(R.id.password);
     			EditText usedTextView = (EditText)findViewById(R.id.used_text);
     			
-    	    	Fakehash hashGenerator = new Fakehash();
+    	    	HashBuilder hashGenerator = new HashBuilder();
     	    	String masterPassword = masterPasswordView.getText().toString();
     	    	String usedText = usedTextView.getText().toString();
     	    	String password = hashGenerator.getHash(masterPassword, usedText);

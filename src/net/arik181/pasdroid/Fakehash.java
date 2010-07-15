@@ -42,6 +42,7 @@ public class Fakehash {
 	
 	public String getHash(String masterPassword, String other)
 	{
+		
 		String hash = masterPassword + other;
 		return hash;
 	}
