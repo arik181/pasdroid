@@ -6,3 +6,5 @@ project.txt
 README
 res
 src
+bin
+gen
