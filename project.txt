@@ -30,9 +30,10 @@ Original Command Line Client Written by Miquel Burns
 --------------------------------------------------------------------------------
 
 The design of pasdroid is largely a port of the javascript version of Password 
-Maker and will be organized as follows:
+Maker and will be organized initially as follows. Other classes will be added 
+as more functionality is included.
 
-classes:
+0.1 classes:
 
     - Interface
         The entry point activity class for pasdroid.
@@ -44,11 +45,10 @@ classes:
     - pasMD5
         Java MD5 implementation
 
-    - pasMD4
-        Java MD4 implementation
+    - pasHashUtils
+        Commonly used Utilities for hashing
 
-    - pasRIPEMD160
-        Java RIPEMD160 implementation
+0.2 classes:
 
     - pasSHA1
         Java SHA1 implementation
@@ -56,10 +56,20 @@ classes:
     - pasSHA256
         Java SHA256 implementation
 
-    - pasHashUtils
-        Commonly used Utilities for hashing
+0.3 classes
 
     - pasl33t
         String modifier for application both before and after hashing
+
+0.4 classes
+
+    - pasMD4
+        Java MD4 implementation
+
+0.5 classes
+
+    - pasRIPEMD160
+        Java RIPEMD160 implementation
+
 
 
