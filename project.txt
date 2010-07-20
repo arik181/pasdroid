@@ -42,34 +42,39 @@ as more functionality is included.
         The facade class which interacts with the pas* classes on behalf
         of the Interface.
 
+    - TestClass
+        The class responsible for running tests on other classes. 
+        
+0.2 classes: 
+
     - pasMD5
-        Java MD5 implementation
+        Java MD5 implementation.
 
     - pasHashUtils
-        Commonly used Utilities for hashing
+        Commonly used Utilities for hashing.
 
-0.2 classes:
+0.3 classes:
 
     - pasSHA1
-        Java SHA1 implementation
+        Java SHA1 implementation.
 
     - pasSHA256
-        Java SHA256 implementation
-
-0.3 classes
-
-    - pasl33t
-        String modifier for application both before and after hashing
+        Java SHA256 implementation.
 
 0.4 classes
 
-    - pasMD4
-        Java MD4 implementation
+    - pasl33t
+        String modifier for application both before and after hashing.
 
 0.5 classes
 
+    - pasMD4
+        Java MD4 implementation.
+
+0.6 classes
+
     - pasRIPEMD160
-        Java RIPEMD160 implementation
+        Java RIPEMD160 implementation.
 
 
 
