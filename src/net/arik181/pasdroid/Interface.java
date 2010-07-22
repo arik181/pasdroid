@@ -61,7 +61,7 @@ public class Interface extends Activity {
     	    	HashBuilder hashGenerator = new HashBuilder();
     	    	String masterPassword = masterPasswordView.getText().toString();
     	    	String usedText = usedTextView.getText().toString();
-    	    	String password = hashGenerator.getHash(masterPassword, usedText);
+    	    	String password = "MD5: " + hashGenerator.getHash(masterPassword, usedText);
     			generatedPasswordView.setText(password);
     		}
     	});

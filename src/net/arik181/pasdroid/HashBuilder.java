@@ -31,6 +31,7 @@ package net.arik181.pasdroid;
 
 import java.security.MessageDigest;
 import java.security.*;
+import java.math.BigInteger;
 
 /**
  * @author arik181
@@ -45,7 +46,7 @@ public class HashBuilder {
 	
 	public String GeneratePassword(
 	        String algorithm,
-	        String mpw,
+	        String masterPassword,
 	        String url,
 	        String user,
 	        String mod,
@@ -67,24 +68,27 @@ public class HashBuilder {
 		try 
 		{
 		   MessageDigest md5 = MessageDigest.getInstance("MD5");
-	       String keystring = url + masterPassword;
-	       md5.update(keystring.getBytes());
-	       byte[] hash = md5.digest();
-           return hash.toString();
+	       md5.reset();
+	       String keystring = masterPassword + url;
+	       md5.update(keystring.getBytes(), 0, keystring.length()); 
+	       
+	       String hash = new BigInteger(1,md5.digest()).toString(16);
+	       return hash.toString();
 		}
 		catch (NoSuchAlgorithmException ex)
 		{
 			System.out.println(ex);
 			return null;
 		}
-		
 	}
+	
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		String password;
+		HashBuilder hb = new HashBuilder();
+		password = hb.getHash("abc","abc");
+		System.out.println(password);
 	}
-
 }
