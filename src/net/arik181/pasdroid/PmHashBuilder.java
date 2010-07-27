@@ -27,21 +27,24 @@
  * <miquelfire@gmail.com> and Eric H. Jung
 */
 
-package net.arik181.pasdroid;
+//package net.arik181.pasdroid;
 
 import java.security.MessageDigest;
 import java.security.*;
 import java.math.BigInteger;
+import java.lang.*;
+import java.lang.Integer;
+import java.lang.Byte;
+import java.io.*;
 
 /**
  * @author arik181
  *
  */
-public class HashBuilder {
+public class PmHashBuilder {
 
-	public HashBuilder()
+	public PmHashBuilder()
 	{
-		
 	}
 	
 	public String GeneratePassword(
@@ -57,23 +60,22 @@ public class HashBuilder {
 	        String prefix,
 	        String suffix,
 	        Boolean trim,
-	        Boolean sha256_bug 
-	        )
+	        Boolean sha256_bug )
 	{
-		return null;
+		// TODO STUB
+        return null;
 	}
 
 	public String getHash(String masterPassword, String url)
 	{
 		try 
 		{
+           String keystring = masterPassword + url;
 		   MessageDigest md5 = MessageDigest.getInstance("MD5");
-	       md5.reset();
-	       String keystring = masterPassword + url;
-	       md5.update(keystring.getBytes(), 0, keystring.length()); 
-	       
-	       String hash = new BigInteger(1,md5.digest()).toString(16);
-	       return hash.toString();
+           byte hash[] = md5.digest(keystring.getBytes());
+	       String hashString = new BigInteger(1,hash).toString(16);
+
+           return hashString;
 		}
 		catch (NoSuchAlgorithmException ex)
 		{
@@ -85,10 +87,12 @@ public class HashBuilder {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(String args[]) {
 		String password;
-		HashBuilder hb = new HashBuilder();
+		PmHashBuilder hb = new PmHashBuilder();
 		password = hb.getHash("abc","abc");
 		System.out.println(password);
+
+        System.exit(0);
 	}
 }
