@@ -1,0 +1,49 @@
+<< OSS Plan >>
+
+Milestones
+
+    Setup
+
+        Project directory
+        Establish backup
+        Set up VCS/git
+        First source file
+        Choose a license
+        Apply a license
+        Write a Project Description / Architecture
+        Put up a website
+        Project plan
+        Link to course page
+
+    Activity Interface
+
+        Password:
+        Confirmation:
+    
+        Save Disk:
+        Use Profile:
+    
+        Used Text:
+        
+        Show Password
+        Copy to clipboard
+
+    FakeHash (MD5 Stub)
+
+    Use MD5 Implementation
+
+    Options Activity Interface
+
+        URL Components:
+
+        Use l33t:
+
+        Hash Algorithm:
+
+        Password Length:
+
+        Character Set:
+
+        Password Prefix: 
+        Password Suffix:
+    
