@@ -29,70 +29,18 @@
 
 //package net.arik181.pasdroid;
 
-import java.security.MessageDigest;
-import java.security.*;
-import java.math.BigInteger;
-import java.lang.*;
-import java.lang.Integer;
-import java.lang.Byte;
-import java.io.*;
-
 /**
  * @author arik181
  *
  */
-public class PmHashBuilder {
+interface PmHashBuilder {
 
-	public PmHashBuilder()
-	{
-	}
-	
-	public String GeneratePassword(
-	        String algorithm,
-	        String masterPassword,
-	        String url,
-	        String user,
-	        String mod,
-	        Boolean leet,
-	        int leetlevel,
-	        int length,
-	        String charset,
-	        String prefix,
-	        String suffix,
-	        Boolean trim,
-	        Boolean sha256_bug )
-	{
-		// TODO STUB
-        return null;
-	}
+    public void setOptions(String user, String mod);
+    public void setTrim(int length); // Default 8 char
+    public void setCharSet(String charset); 
+    public void setLeet(int leetlevel); // Leet is off by default
+    public void setPrefix(String prefix);
+    public void setSuffix(String suffix);
+    public String getHash(String masterPassword, String url);
 
-	public String getHash(String masterPassword, String url)
-	{
-		try 
-		{
-           String keystring = masterPassword + url;
-		   MessageDigest md5 = MessageDigest.getInstance("MD5");
-           byte hash[] = md5.digest(keystring.getBytes());
-	       String hashString = new BigInteger(1,hash).toString(16);
-
-           return hashString;
-		}
-		catch (NoSuchAlgorithmException ex)
-		{
-			System.out.println(ex);
-			return null;
-		}
-	}
-	
-	/**
-	 * @param args
-	 */
-	public static void main(String args[]) {
-		String password;
-		PmHashBuilder hb = new PmHashBuilder();
-		password = hb.getHash("abc","abc");
-		System.out.println(password);
-
-        System.exit(0);
-	}
 }
