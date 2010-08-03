@@ -44,6 +44,21 @@ public class HashBuilder {
 		
 	}
 	
+	/**
+	 * @param algorithm
+         * @param masterPassword
+	 * @param url
+	 * @param user
+	 * @param mod
+	 * @param leet
+	 * @param leetlevel
+	 * @param length
+	 * @param charset
+	 * @param prefix
+	 * @param suffix
+	 * @param trim
+	 * @param sha256_bug
+	 */
 	public String GeneratePassword(
 	        String algorithm,
 	        String masterPassword,
@@ -63,6 +78,10 @@ public class HashBuilder {
 		return null;
 	}
 
+	/**
+	 * @param masterPassword
+	 * @param url
+	 */
 	public String getHash(String masterPassword, String url)
 	{
 		try 
