@@ -64,7 +64,7 @@ public class PmMD5 implements PmHashBuilder {
     /**
      * @param length
      */
-    public void setTrim(int length) // Default 8 cha
+    public void setTrim(int length) // Default 8 characters
     {
         this.length = length;
     }
@@ -80,7 +80,7 @@ public class PmMD5 implements PmHashBuilder {
     /**
      * @param leetlevel
      */
-    public void setLeet(int leetlevel) // Leet is off by defaul
+    public void setLeet(int leetlevel) // Leet is off by default
     {
         this.leetlevel = leetlevel;
     }
@@ -139,6 +139,10 @@ public class PmMD5 implements PmHashBuilder {
 		password = hb.getHash("abc","abc");
 		System.out.println(password);
 
-        System.exit(0);
+		PmHashUtils util = new PmHashUtils();
+		System.out.println(util.test("test"));
+		System.out.println(util.test(password));
+
+		System.exit(0);
 	}
 }
