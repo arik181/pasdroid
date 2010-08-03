@@ -52,50 +52,50 @@ public class PmMD5 implements PmHashBuilder {
     private int length = 0;
     private int leetlevel = 0;
 
-	/**
-	 * @param user
+    /**
+     * @param user
      * @param mod
-	 */
+     */
     public void setOptions(String user, String mod)
     {
         this.user = user;
     }
 
-	/**
-	 * @param length
-	 */
+    /**
+     * @param length
+     */
     public void setTrim(int length) // Default 8 cha
     {
         this.length = length;
     }
 
-	/**
-	 * @param charset
-	 */
+    /**
+     * @param charset
+     */
     public void setCharSet(String charset)
     {
         this.charset = charset;
     }
 
-	/**
-	 * @param leetlevel
-	 */
+    /**
+     * @param leetlevel
+     */
     public void setLeet(int leetlevel) // Leet is off by defaul
     {
         this.leetlevel = leetlevel;
     }
 
-	/**
-	 * @param prefix
-	 */
+    /**
+     * @param prefix
+     */
     public void setPrefix(String prefix)
     {
         this.prefix = prefix;
     }
 
-	/**
-	 * @param suffix
-	 */
+    /**
+     * @param suffix
+     */
     public void setSuffix(String suffix)
     {
         this.suffix = suffix;
@@ -103,8 +103,8 @@ public class PmMD5 implements PmHashBuilder {
 
 	/**
 	 * @param masterPassword
-     * @param url
-     * @return 
+         * @param url
+         * @return 
 	 */
 	public String getHash(String masterPassword, String url)
 	{

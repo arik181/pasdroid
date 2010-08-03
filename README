@@ -1,6 +1,12 @@
 pasdroid - An open source implementation of Password Maker for the
 Android platform, written in Java
 
+That said, this software is in an early stage of development, and I would 
+not recommend that you install it just yet. Currently, the build files are
+Eclipse environment specific. Once I'm comfortable that the code will not 
+blow anything up, and everything is relatively clean, I'll upload an ant 
+file for general development purposes.
+
 Copyright (C) 2010 Devin Quirozoliver
 http://arik181.github.com/pasdroid
 http://github.com/arik181/pasdroid
