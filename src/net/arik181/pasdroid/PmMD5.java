@@ -27,87 +27,118 @@
  * <miquelfire@gmail.com> and Eric H. Jung
 */
 
-package net.arik181.pasdroid;
 
 import java.security.MessageDigest;
 import java.security.*;
 import java.math.BigInteger;
+import java.lang.*;
+import java.lang.Integer;
+import java.lang.Byte;
+import java.io.*;
 
 /**
  * @author arik181
  *
  */
-public class HashBuilder {
+public class PmMD5 implements PmHashBuilder {
 
-	public HashBuilder()
-	{
-		
-	}
-	
+    private String algorithm = "MD5";
+    private String user = null;
+    private String mod = null;
+    private String charset = null;
+    private String prefix = null;
+    private String suffix = null;
+
+    private int length = 0;
+    private int leetlevel = 0;
+
 	/**
-	 * @param algorithm
-         * @param masterPassword
-	 * @param url
 	 * @param user
-	 * @param mod
-	 * @param leet
-	 * @param leetlevel
-	 * @param length
-	 * @param charset
-	 * @param prefix
-	 * @param suffix
-	 * @param trim
-	 * @param sha256_bug
+     * @param mod
 	 */
-	public String GeneratePassword(
-	        String algorithm,
-	        String masterPassword,
-	        String url,
-	        String user,
-	        String mod,
-	        Boolean leet,
-	        int leetlevel,
-	        int length,
-	        String charset,
-	        String prefix,
-	        String suffix,
-	        Boolean trim,
-	        Boolean sha256_bug 
-	        )
-	{
-		return null;
-	}
+    public void setOptions(String user, String mod)
+    {
+        this.user = user;
+    }
+
+	/**
+	 * @param length
+	 */
+    public void setTrim(int length) // Default 8 cha
+    {
+        this.length = length;
+    }
+
+	/**
+	 * @param charset
+	 */
+    public void setCharSet(String charset)
+    {
+        this.charset = charset;
+    }
+
+	/**
+	 * @param leetlevel
+	 */
+    public void setLeet(int leetlevel) // Leet is off by defaul
+    {
+        this.leetlevel = leetlevel;
+    }
+
+	/**
+	 * @param prefix
+	 */
+    public void setPrefix(String prefix)
+    {
+        this.prefix = prefix;
+    }
+
+	/**
+	 * @param suffix
+	 */
+    public void setSuffix(String suffix)
+    {
+        this.suffix = suffix;
+    }
 
 	/**
 	 * @param masterPassword
-	 * @param url
+     * @param url
+     * @return 
 	 */
 	public String getHash(String masterPassword, String url)
 	{
 		try 
 		{
-		   MessageDigest md5 = MessageDigest.getInstance("MD5");
-	       md5.reset();
-	       String keystring = masterPassword + url;
-	       md5.update(keystring.getBytes(), 0, keystring.length()); 
-	       
-	       String hash = new BigInteger(1,md5.digest()).toString(16);
-	       return hash.toString();
+           String keystring = masterPassword + url;
+		   MessageDigest md5 = MessageDigest.getInstance(this.algorithm);
+           byte hash[] = md5.digest(keystring.getBytes());
+	       String hashString = new BigInteger(1,hash).toString(16);
+
+           return hashString;
 		}
 		catch (NoSuchAlgorithmException ex)
 		{
 			System.out.println(ex);
-			return null;
+            return "No Such Algorithm";
 		}
+        catch (Exception e)
+        {
+            System.out.println(e);
+            System.out.println(this.algorithm);
+            return "Exception";
+        }
 	}
 	
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(String args[]) {
 		String password;
-		HashBuilder hb = new HashBuilder();
+		PmMD5 hb = new PmMD5();
 		password = hb.getHash("abc","abc");
 		System.out.println(password);
+
+        System.exit(0);
 	}
 }

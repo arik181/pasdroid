@@ -66,4 +66,14 @@ public class Interface extends Activity {
     		}
     	});
     }
+
+    public void help()
+    {
+        // TODO STUB
+    }
+
+    public void printerr()
+    {
+        // TODO STUB
+    }
 }

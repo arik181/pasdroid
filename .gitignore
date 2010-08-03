@@ -5,6 +5,7 @@ res
 bin
 gen
 *.log
+*.class
 junit-4.8.2.jar
 *.swp
 *~
