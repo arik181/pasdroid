@@ -6,3 +6,5 @@ bin
 gen
 *.log
 junit-4.8.2.jar
+*.swp
+*~
