@@ -1,0 +1,36 @@
+pasdroid - An open source implementation of Password Maker for the
+Android platform, written in Java
+
+That said, this software is in an early stage of development, and I would 
+not recommend that you install it just yet. Currently, the build files are
+Eclipse environment specific. Once I'm comfortable that the code will not 
+blow anything up, and everything is relatively clean, I'll upload an ant 
+file for general development purposes.
+
+Copyright (C) 2010 Devin Quirozoliver
+http://arik181.github.com/pasdroid
+http://github.com/arik181/pasdroid
+http://passwordmaker.org/
+
+This library is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation; either version 2.1 of the License, or (at
+your option) any later version.
+ 
+This library is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License
+for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with this library; if not, write to the Free Software Foundation,
+Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+
+Written by Devin Quirozoliver <arik181@hotmail.com>
+
+Original Command Line Client Written by Miquel Burns 
+<miquelfire@gmail.com> and Eric H. Jung
+
+For further details about the license, see the license.txt file.
+For information about installation, see the install.txt file.
+For information about the project architecture, see the project.txt file
