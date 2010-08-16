@@ -1,0 +1,40 @@
+<project name="pasdroid" default="dist" basedir=".">
+
+    <description>
+        Password Maker for Android.
+    </description>
+
+    <!-- set global properties for this build -->
+    <property file="build.properties.xml"/>
+
+    <target name="init">
+        <buildnumber/>
+        <tstamp/>
+        <mkdir dir="${build}"/>
+    </target>
+
+
+    <target name="compile" depends="init" description="compile source">
+        <!-- Compile the java code from ${src} into ${build} -->
+        <javac srcdir="${src}" destdir="${build}"/>
+    </target>
+
+
+    <target name="dist" depends="compile" description="generate distro" >
+        <!-- Create the distribution directory -->
+        <mkdir dir="${dist}/lib"/>
+
+        <!-- Put everything in ${build} into the MyProject-${DSTAMP}.jar file -->
+        <jar jarfile="${dist}/lib/pasdroid-${DSTAMP}-${build.number}.jar" 
+            basedir="${build}"/>
+    </target>
+
+
+    <target name="clean" description="clean" >
+        <!-- Delete the ${build} and ${dist} directory trees -->
+        <delete dir="${build}"/>
+        <delete dir="${dist}"/>
+    </target>
+
+</project>
+
