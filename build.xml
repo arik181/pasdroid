@@ -20,6 +20,13 @@
         </echo>
     </target>
 
+    <!-- Run the tests. -->
+    <target name="test" depends="test1">
+        <echo>
+            Running tests.
+        </echo>
+    </target>
+
     <!-- Build the code. -->
     <target name="compile" depends="init,test" description="compile source">
         <javac srcdir="${src}" destdir="${build}"/>
@@ -36,6 +43,10 @@
     <target name="clean" description="clean" >
         <delete dir="${build}"/>
         <delete dir="${dist}"/>
+    </target>
+
+    <!-- Run the tests. -->
+    <target name="test1">
     </target>
 
 </project>
