@@ -1,3 +1,6 @@
+<!-- Directories -->
 <property name="src" location="src/net/arik181/pasdroid"/>
 <property name="build" location="build"/>
 <property name="dist"  location="dist"/>
+
+

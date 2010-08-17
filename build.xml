@@ -1,10 +1,10 @@
-<project name="pasdroid" default="dist" basedir=".">
+<project name="pasdroid" default="main" basedir=".">
 
     <description>
         Password Maker for Android.
     </description>
 
-    <!-- set global properties for this build -->
+    <!-- Set global properties for this build -->
     <property file="build.properties.xml"/>
 
     <target name="init">
@@ -13,25 +13,27 @@
         <mkdir dir="${build}"/>
     </target>
 
+    <!-- Do the thing. -->
+    <target name="main" depends="compile,dist">
+        <echo>
+            Building the .jar file.
+        </echo>
+    </target>
 
-    <target name="compile" depends="init" description="compile source">
-        <!-- Compile the java code from ${src} into ${build} -->
+    <!-- Build the code. -->
+    <target name="compile" depends="init,test" description="compile source">
         <javac srcdir="${src}" destdir="${build}"/>
     </target>
 
-
+    <!-- Create the .jar file -->
     <target name="dist" depends="compile" description="generate distro" >
-        <!-- Create the distribution directory -->
         <mkdir dir="${dist}/lib"/>
-
-        <!-- Put everything in ${build} into the MyProject-${DSTAMP}.jar file -->
         <jar jarfile="${dist}/lib/pasdroid-${DSTAMP}-${build.number}.jar" 
-            basedir="${build}"/>
+            basedir="${build}" includes="*.class"/>
     </target>
 
-
+    <!-- Clean up the build and dist directories -->
     <target name="clean" description="clean" >
-        <!-- Delete the ${build} and ${dist} directory trees -->
         <delete dir="${build}"/>
         <delete dir="${dist}"/>
     </target>
