@@ -35,7 +35,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import net.arik181.pasdroid.HashBuilder;
+import net.arik181.pasdroid.PasswordMaker;
 
 
 public class Interface extends Activity {
@@ -58,10 +58,10 @@ public class Interface extends Activity {
     			EditText masterPasswordView = (EditText)findViewById(R.id.password);
     			EditText usedTextView = (EditText)findViewById(R.id.used_text);
     			
-    	    	HashBuilder hashGenerator = new HashBuilder();
-    	    	String masterPassword = masterPasswordView.getText().toString();
+    			String masterPassword = masterPasswordView.getText().toString();
     	    	String usedText = usedTextView.getText().toString();
-    	    	String password = hashGenerator.getHash(masterPassword, usedText);
+    	    	PasswordMaker pm = new PasswordMaker(masterPassword, usedText);
+    	    	String password = pm.generatePassword();
     			generatedPasswordView.setText(password);
     		}
     	});

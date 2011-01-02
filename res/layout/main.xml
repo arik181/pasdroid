@@ -88,27 +88,10 @@
 		/>
 		
 		<TextView
-				android:id="@+id/use_profile_label"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_below="@id/save_password"
-				android:text="@string/use_profile_label"
-				/>
-				
-		<Spinner
-				android:id="@+id/use_profile"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_below="@id/use_profile_label"
-				android:text="@string/use_profile"
-		/>
-		
-			
-		<TextView
 				android:id="@+id/used_text_label"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_below="@id/use_profile"
+				android:layout_below="@id/save_password"
 				android:text="@string/used_text_label"
 				/>
 				
