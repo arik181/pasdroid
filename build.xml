@@ -1,0 +1,53 @@
+<project name="pasdroid" default="main" basedir=".">
+
+    <description>
+        Password Maker for Android.
+    </description>
+
+    <!-- Set global properties for this build -->
+    <property file="build.properties.xml"/>
+
+    <target name="init">
+        <buildnumber/>
+        <tstamp/>
+        <mkdir dir="${build}"/>
+    </target>
+
+    <!-- Do the thing. -->
+    <target name="main" depends="compile,dist">
+        <echo>
+            Building the .jar file.
+        </echo>
+    </target>
+
+    <!-- Run the tests. -->
+    <target name="test" depends="test1">
+        <echo>
+            Running tests.
+        </echo>
+    </target>
+
+    <!-- Build the code. -->
+    <target name="compile" depends="init,test" description="compile source">
+        <javac srcdir="${src}" destdir="${build}"/>
+    </target>
+
+    <!-- Create the .jar file -->
+    <target name="dist" depends="compile" description="generate distro" >
+        <mkdir dir="${dist}/lib"/>
+        <jar jarfile="${dist}/lib/pasdroid-${DSTAMP}-${build.number}.jar" 
+            basedir="${build}" includes="*.class"/>
+    </target>
+
+    <!-- Clean up the build and dist directories -->
+    <target name="clean" description="clean" >
+        <delete dir="${build}"/>
+        <delete dir="${dist}"/>
+    </target>
+
+    <!-- Run the tests. -->
+    <target name="test1">
+    </target>
+
+</project>
+

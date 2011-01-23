@@ -1,10 +1,12 @@
 AndroidManifest.xml
 default.properties
-install.txt
-license.txt
-project.txt
 README
 res
 bin
 gen
 *.log
+*.class
+junit-4.8.2.jar
+*.swp
+*~
+build/*
