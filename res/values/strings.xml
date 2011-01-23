@@ -36,13 +36,23 @@
 	<string name="confirmation_label">Confirmation:</string>
 	<string name="confirmation"></string>
 	<string name="save_password_label">Save Password:</string>
-	<string name="save_password">In Memory</string>
+	<string name="save_password_prompt">Save Password</string>
 	<string name="use_profile_label">Use Profile:</string>
 	<string name="use_profile">Default</string>
 	<string name="used_text_label">Used Text:</string>
 	<string name="used_text"></string>
 	<string name="generated_password_label">Generated Password:</string>
 	<string name="generated_password"></string>
-	<string name="copy_button">Copy to Clipboard</string>
-	<string name="generate_button">Generate Hash</string>
+	<string name="copy_button">Copy Password</string>
+	<string name="generate_button">Show Password</string>
+
+<string name="options_menu_label">Options</string>
+<string-array name="save_password_array">
+	
+	<item>On Disk</item>
+	<item>Never</item>
+</string-array>
+
+<string name="hide_button">Hide Password</string>
+<string name="master_pass"></string>
 </resources>
